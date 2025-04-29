@@ -6,6 +6,8 @@ import './App.css';
 
 const queryClient = new QueryClient();
 
+const HomePage = React.lazy(() => import('./components/pages/HomePage'));
+
 function App() {
 
     return (
@@ -14,7 +16,7 @@ function App() {
                 <ColorModeButton />
                 <Router>
                     <Routes>
-                        <Route path="/home" element={<div>Home</div>} />
+                        <Route path="/home" element={<HomePage />} />
                         <Route path="/" element={<Navigate to="/" />} />
                         <Route path="/profile/:id" element={<div>Profile</div>} />
                         <Route path="/contact" element={<div>Contact</div>} />
