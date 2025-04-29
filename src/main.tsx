@@ -2,12 +2,12 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.tsx';
-import { Provider } from './components/ui/provider';
+import { StyleProvider } from './components/ui/provider';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Provider>
+    <StyleProvider>
       <App />
-    </Provider>
+    </StyleProvider>
   </React.StrictMode>,
 )
