@@ -1,23 +1,101 @@
 import * as React from 'react';
-import { Box } from '@chakra-ui/react'
+import { 
+    Box, 
+    Button,
+    CloseButton, 
+    Drawer, 
+    IconButton, 
+    Portal, 
+    useBreakpointValue,
+    VStack 
+} from '@chakra-ui/react';
+import { HiMenu } from 'react-icons/hi';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { ColorModeButton } from '../../ui/color-mode';
 import Logo from './Logo';
 
 function PageHeader() {
+
+    const [drawerOpen, setDrawerOpen] = React.useState(false);
+
+    const { t } = useTranslation();
+    const navigate = useNavigate();
+    const isMobile = useBreakpointValue({ base: true, md: false });
+
+
+    const handleMenuToggle = () => {
+        setDrawerOpen(!drawerOpen);
+    };
+
+    const handleMenuItemClick = (path: string) => {
+        setDrawerOpen(false);
+        navigate(path);
+    };
+
     return (
         <React.Fragment>
-            <Box
-                p='4'
-                borderWidth='1px'
-                borderColor='border.200'
-                color='text.primary'
-                bg='background.paper'
-            >
-                <Box display='flex' justifyContent='space-between' alignItems='center'>
-                    <Box fontSize='2xl' fontWeight='bold'><Logo /></Box>
-                    <ColorModeButton />
+            <Drawer.Root open={drawerOpen} placement='start' onOpenChange={handleMenuToggle}>
+                <Box
+                    p='4'
+                    borderWidth='1px'
+                    borderColor='border.200'
+                    color='text.primary'
+                    bg='background.paper'
+                >
+                    <Box display='flex' justifyContent='space-between' alignItems='center'>
+                        <Drawer.Trigger asChild>
+                            <IconButton
+                                aria-label={t('menu.toggle')}
+                                variant='ghost'
+                                display={isMobile ? 'block' : 'none'}
+                                size='lg'
+                            >
+                                <HiMenu />
+                            </IconButton>
+                        </Drawer.Trigger>
+                        <Box fontSize='2xl' fontWeight='bold'><Logo /></Box>
+                        <ColorModeButton />
+                    </Box>
                 </Box>
-            </Box>
+                <Portal>
+                    <Drawer.Backdrop />
+                    <Drawer.Positioner>
+                        <Drawer.Content>
+                            <Drawer.Header>
+                                <Drawer.Title>Hi, User!</Drawer.Title>
+                            </Drawer.Header>
+                            <Drawer.Body>
+                                {/* Navigation Menu Items */}
+                                <VStack align='start' gap={4}>
+                                    <Button variant='ghost' onClick={() => handleMenuItemClick('/home')}>
+                                        Home
+                                    </Button>
+                                    <Button variant='ghost' onClick={() => handleMenuItemClick('/profile')}>
+                                        Profile
+                                    </Button>
+                                    <Button variant='ghost' onClick={() => handleMenuItemClick('/for-you')}>
+                                        For You
+                                    </Button>
+                                    <Button variant='ghost' onClick={() => handleMenuItemClick('/settings')}>
+                                        Settings
+                                    </Button>
+                                    <Button variant='ghost' onClick={() => handleMenuItemClick('/logout')}>
+                                        Logout
+                                    </Button>
+                                </VStack>
+                            </Drawer.Body>
+                            <Drawer.Footer>
+                                <Button variant='outline'>Cancel</Button>
+                                <Button>Save</Button>
+                            </Drawer.Footer>
+                            <Drawer.CloseTrigger asChild>
+                                <CloseButton size='sm' />
+                            </Drawer.CloseTrigger>
+                        </Drawer.Content>
+                    </Drawer.Positioner>
+                </Portal>
+            </Drawer.Root>
         </React.Fragment>
     );
 }

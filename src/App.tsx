@@ -38,8 +38,8 @@ function App() {
     return (
         <React.Fragment>
             <QueryClientProvider client={queryClient}>
-                <PageHeader />
                 <Router>
+                    <PageHeader />
                     <Box maxWidth='100%' minHeight='100vh' margin='40px'>
                         <React.Suspense fallback={<LoadingIndicator />}>
                             <Routes>
