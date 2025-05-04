@@ -7,5 +7,27 @@
         "logout": "Cerrar sesión",
         "toggle": "alternar navegación lateral"
     },
-    "greeting": "¡Hola, Usuario!"
+    "greeting": "¡Hola, Usuario!",
+    "pages": {
+        "home": {
+            "title": "Inicio",
+            "description": "¡Bienvenido a la página de inicio!"
+        },
+        "profile": {
+            "title": "Perfil",
+            "description": "Esta es tu página de perfil."
+        },
+        "forYou": {
+            "title": "Para Ti",
+            "description": "Contenido adaptado solo para ti."
+        },
+        "settings": {
+            "title": "Configuración",
+            "description": "Ajusta tus preferencias aquí."
+        }
+    },
+    "common": {
+        "loading": "Cargando...",
+        "error": "Ocurrió un error. Por favor, inténtalo de nuevo."
+    }
   }

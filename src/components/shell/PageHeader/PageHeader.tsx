@@ -23,7 +23,7 @@ function PageHeader({ authenticated }: PageHeaderProps) {
 
     const [drawerOpen, setDrawerOpen] = React.useState(false);
 
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const navigate = useNavigate();
     const isMobile = useBreakpointValue({ base: true, md: false });
 
@@ -35,6 +35,11 @@ function PageHeader({ authenticated }: PageHeaderProps) {
     const handleMenuItemClick = (path: string) => {
         setDrawerOpen(false);
         navigate(path);
+    };
+
+    const toggleLanguage = () => {
+        const newLanguage = i18n.language === 'en' ? 'es' : 'en';
+        i18n.changeLanguage(newLanguage);
     };
 
     return (
@@ -59,7 +64,12 @@ function PageHeader({ authenticated }: PageHeaderProps) {
                             </IconButton>
                         </Drawer.Trigger>
                         <Box fontSize='2xl' fontWeight='bold'><Logo /></Box>
-                        <ColorModeButton />
+                        <Box display="flex" alignItems="center" gap="2">
+                            <ColorModeButton />
+                            <Button size="sm" variant="ghost" onClick={toggleLanguage}>
+                                {i18n.language === 'en' ? 'ES' : 'EN'}
+                            </Button>
+                        </Box>
                     </Box>
                 </Box>
                 <Portal>

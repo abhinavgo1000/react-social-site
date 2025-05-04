@@ -7,5 +7,27 @@
         "logout": "Logout",
         "toggle": "toggle side navigation"
     },
-    "greeting": "Hi, User!"
+    "greeting": "Hi, User!",
+    "pages": {
+        "home": {
+            "title": "Home",
+            "description": "Welcome to the home page!"
+        },
+        "profile": {
+            "title": "Profile",
+            "description": "This is your profile page."
+        },
+        "forYou": {
+            "title": "For You",
+            "description": "Content tailored just for you."
+        },
+        "settings": {
+            "title": "Settings",
+            "description": "Adjust your preferences here."
+        }
+    },
+    "common": {
+        "loading": "Loading...",
+        "error": "An error occurred. Please try again."
+    }
   }
