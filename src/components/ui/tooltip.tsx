@@ -33,7 +33,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
                     <ChakraTooltip.Content ref={ref} {...contentProps}>
                         {showArrow && (
                             <ChakraTooltip.Arrow>
-                            <ChakraTooltip.ArrowTip />
+                                <ChakraTooltip.ArrowTip />
                             </ChakraTooltip.Arrow>
                         )}
                         {content}
