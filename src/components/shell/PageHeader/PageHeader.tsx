@@ -63,25 +63,25 @@ function PageHeader() {
                     <Drawer.Positioner>
                         <Drawer.Content>
                             <Drawer.Header>
-                                <Drawer.Title>Hi, User!</Drawer.Title>
+                                <Drawer.Title>{t('greeting')}</Drawer.Title>
                             </Drawer.Header>
                             <Drawer.Body>
                                 {/* Navigation Menu Items */}
                                 <VStack align='start' gap={4}>
                                     <Button variant='ghost' onClick={() => handleMenuItemClick('/home')}>
-                                        Home
+                                        {t('menu.home')}
                                     </Button>
                                     <Button variant='ghost' onClick={() => handleMenuItemClick('/profile')}>
-                                        Profile
+                                        {t('menu.profile')}
                                     </Button>
                                     <Button variant='ghost' onClick={() => handleMenuItemClick('/for-you')}>
-                                        For You
+                                        {t('menu.forYou')}
                                     </Button>
                                     <Button variant='ghost' onClick={() => handleMenuItemClick('/settings')}>
-                                        Settings
+                                        {t('menu.settings')}
                                     </Button>
                                     <Button variant='ghost' onClick={() => handleMenuItemClick('/logout')}>
-                                        Logout
+                                        {t('menu.logout')}
                                     </Button>
                                 </VStack>
                             </Drawer.Body>

@@ -1,0 +1,11 @@
+{
+    "menu": {
+        "home": "Inicio",
+        "profile": "Perfil",
+        "forYou": "Para Ti",
+        "settings": "Configuración",
+        "logout": "Cerrar sesión",
+        "toggle": "alternar navegación lateral"
+    },
+    "greeting": "¡Hola, Usuario!"
+  }

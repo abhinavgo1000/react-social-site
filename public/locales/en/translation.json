@@ -1,0 +1,11 @@
+{
+    "menu": {
+        "home": "Home",
+        "profile": "Profile",
+        "forYou": "For You",
+        "settings": "Settings",
+        "logout": "Logout",
+        "toggle": "toggle side navigation"
+    },
+    "greeting": "Hi, User!"
+  }
