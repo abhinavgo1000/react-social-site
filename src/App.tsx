@@ -39,7 +39,7 @@ function App() {
         <React.Fragment>
             <QueryClientProvider client={queryClient}>
                 <Router>
-                    <PageHeader />
+                    <PageHeader authenticated={auth.isAuthenticated} />
                     <Box maxWidth='100%' minHeight='100vh' margin='40px'>
                         <React.Suspense fallback={<LoadingIndicator />}>
                             <Routes>

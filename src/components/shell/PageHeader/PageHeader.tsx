@@ -15,7 +15,11 @@ import { useNavigate } from 'react-router-dom';
 import { ColorModeButton } from '../../ui/color-mode';
 import Logo from './Logo';
 
-function PageHeader() {
+interface PageHeaderProps {
+    authenticated: boolean;
+}
+
+function PageHeader({ authenticated }: PageHeaderProps) {
 
     const [drawerOpen, setDrawerOpen] = React.useState(false);
 
@@ -48,7 +52,7 @@ function PageHeader() {
                             <IconButton
                                 aria-label={t('menu.toggle')}
                                 variant='ghost'
-                                display={isMobile ? 'block' : 'none'}
+                                display={(authenticated && isMobile) ? 'block' : 'none'}
                                 size='lg'
                             >
                                 <HiMenu />
