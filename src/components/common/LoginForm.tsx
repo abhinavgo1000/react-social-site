@@ -5,6 +5,8 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+const API_BASE_URL = import.meta.env.VITE_REACT_APP_API_BASE_URL;
+
 function LoginForm() {
 
     const [email, setEmail] = React.useState('');
