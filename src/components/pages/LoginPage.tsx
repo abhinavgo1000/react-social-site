@@ -1,7 +1,12 @@
 import * as React from 'react';
-import { Grid, GridItem } from '@chakra-ui/react';
+import { Grid, GridItem, Heading, Text } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
+import LoginForm from '../common/LoginForm';
 
 function LoginPage() {
+
+    const { t } = useTranslation();
+
     return (
         <React.Fragment>
             <Grid
@@ -11,10 +16,11 @@ function LoginPage() {
                 gap={4}
             >
                 <GridItem rowSpan={1} colSpan={4}>
-                    <h1>Login Page</h1>
+                    <Heading>{t('pages.login.title')}</Heading>
+                    <Text>{t('pages.login.description')}</Text>
                 </GridItem>
                 <GridItem rowSpan={1} colSpan={4}>
-                    <p>Welcome to the login page!</p>
+                    <LoginForm />
                 </GridItem>
             </Grid>
         </React.Fragment>

@@ -24,10 +24,74 @@
         "settings": {
             "title": "Settings",
             "description": "Adjust your preferences here."
+        },
+        "login": {
+            "title": "Login",
+            "description": "Please enter your credentials to log in."
+        },
+        "register": {
+            "title": "Register",
+            "description": "Create a new account."
+        },
+        "notFound": {
+            "title": "404 Not Found",
+            "description": "The page you are looking for does not exist."
+        },
+        "error": {
+            "title": "Error",
+            "description": "An error occurred. Please try again."
+        },
+        "logout": {
+            "title": "Logout",
+            "description": "You have been logged out."
         }
     },
     "common": {
         "loading": "Loading...",
         "error": "An error occurred. Please try again."
+    },
+    "forms": {
+        "login": {
+            "loginTitle": "Login",
+            "loginDescription": "Please enter your credentials to log in.",
+            "email": "Email",
+            "emailPlaceholder": "Enter your email",
+            "password": "Password",
+            "passwordPlaceholder": "Enter your password",
+            "submit": "Login",
+            "forgotPassword": "Forgot Password?",
+            "createAccount": "Don't have an account?",
+            "register": "Register",
+            "rememberMe": "Remember Me"
+        },
+        "register": {
+            "username": "Username",
+            "email": "Email",
+            "password": "Password",
+            "confirmPassword": "Confirm Password",
+            "submit": "Register"
+        },
+        "settings": {
+            "language": "Language",
+            "theme": "Theme",
+            "notifications": "Notifications"
+        }
+    },
+    "notifications": {
+        "newMessage": "You have a new message.",
+        "friendRequest": "You have a new friend request.",
+        "updateAvailable": "An update is available."
+    },
+    "errors": {
+        "network": "Network error. Please check your connection.",
+        "server": "Server error. Please try again later.",
+        "validation": {
+            "required": "{{field}} is required.",
+            "email": "Please enter a valid email address.",
+            "password": {
+                "minLength": "Password must be at least {{min}} characters long.",
+                "match": "Passwords do not match."
+            }
+        }
     }
   }

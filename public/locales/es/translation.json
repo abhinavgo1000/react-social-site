@@ -24,10 +24,74 @@
         "settings": {
             "title": "Configuración",
             "description": "Ajusta tus preferencias aquí."
+        },
+        "login": {
+            "title": "Iniciar sesión",
+            "description": "Por favor, ingresa tus credenciales para iniciar sesión."
+        },
+        "register": {
+            "title": "Registrarse",
+            "description": "Crea una nueva cuenta."
+        },
+        "notFound": {
+            "title": "404 No Encontrado",
+            "description": "La página que buscas no existe."
+        },
+        "error": {
+            "title": "Error",
+            "description": "Ocurrió un error. Por favor, inténtalo de nuevo."
+        },
+        "logout": {
+            "title": "Cerrar sesión",
+            "description": "Has cerrado sesión."
         }
     },
     "common": {
         "loading": "Cargando...",
         "error": "Ocurrió un error. Por favor, inténtalo de nuevo."
+    },
+    "forms": {
+        "login": {
+            "loginTitle": "Iniciar sesión",
+            "loginDescription": "Por favor, ingresa tus credenciales para iniciar sesión.",
+            "email": "Correo electrónico",
+            "emailPlaceholder": "Ingresa tu correo electrónico",
+            "password": "Contraseña",
+            "passwordPlaceholder": "Ingresa tu contraseña",
+            "submit": "Iniciar sesión",
+            "forgotPassword": "¿Olvidaste tu contraseña?",
+            "createAccount": "¿No tienes una cuenta?",
+            "register": "Registrarse",
+            "rememberMe": "Recuérdame"
+        },
+        "register": {
+            "username": "Nombre de usuario",
+            "email": "Correo electrónico",
+            "password": "Contraseña",
+            "confirmPassword": "Confirmar contraseña",
+            "submit": "Registrarse"
+        },
+        "settings": {
+            "language": "Idioma",
+            "theme": "Tema",
+            "notifications": "Notificaciones"
+        }
+    },
+    "notifications": {
+        "newMessage": "Tienes un nuevo mensaje.",
+        "friendRequest": "Tienes una nueva solicitud de amistad.",
+        "updateAvailable": "Hay una nueva actualización disponible."
+    },
+    "errors": {
+        "network": "Error de red. Por favor, verifica tu conexión.",
+        "server": "Error del servidor. Por favor, inténtalo de nuevo más tarde.",
+        "validation": {
+            "required": "{{field}} es obligatorio.",
+            "email": "Por favor, ingresa una dirección de correo electrónico válida.",
+            "password": {
+                "minLength": "La contraseña debe tener al menos {{min}} caracteres.",
+                "match": "Las contraseñas no coinciden."
+            }
+        }
     }
-  }
+}

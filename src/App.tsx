@@ -2,12 +2,20 @@ import * as React from 'react';
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import { Box } from '@chakra-ui/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import LoadingIndicator from './components/common/LoadingIndicator';
 import PageHeader from './components/shell/PageHeader/PageHeader';
 import PageFooter from './components/shell/PageFooter/PageFooter';
 import './App.css';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+    defaultOptions: {
+        queries: {
+            refetchOnWindowFocus: false,
+            retry: false,
+        },
+    },
+});
 
 const HomePage = React.lazy(() => import('./components/pages/HomePage'));
 const ForYouPage = React.lazy(() => import('./components/pages/ForYouPage'));
@@ -38,6 +46,7 @@ function App() {
     return (
         <React.Fragment>
             <QueryClientProvider client={queryClient}>
+                {/* <ReactQueryDevtools initialIsOpen={false} /> */}
                 <Router>
                     <PageHeader authenticated={auth.isAuthenticated} />
                     <Box maxWidth='100%' minHeight='100vh' margin='40px'>
