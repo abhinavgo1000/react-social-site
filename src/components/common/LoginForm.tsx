@@ -2,8 +2,10 @@ import * as React from 'react';
 import { 
     Box, Button, Checkbox, Field, Fieldset, Input, Link, Stack, Text 
 } from '@chakra-ui/react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { login } from '../../store/reducer/authSlice';
 
 const API_BASE_URL = import.meta.env.VITE_REACT_APP_API_BASE_URL;
 
@@ -19,6 +21,7 @@ function LoginForm() {
     const [passwordError, setPasswordError] = React.useState<string | null>(null);
 
 
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const { t } = useTranslation();
 
@@ -40,7 +43,7 @@ function LoginForm() {
         // Simulate form submission
         event.preventDefault();
         // Handle form submission logic here
-        console.log('Form submitted');
+        dispatch(login({ email }));
         console.log(API_BASE_URL)
         navigate('/home'); // Redirect to home page after login
     };

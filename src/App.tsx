@@ -2,10 +2,11 @@ import * as React from 'react';
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import { Box } from '@chakra-ui/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-// import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { useSelector } from 'react-redux';
 import LoadingIndicator from './components/common/LoadingIndicator';
 import PageHeader from './components/shell/PageHeader/PageHeader';
 import PageFooter from './components/shell/PageFooter/PageFooter';
+import { RootState } from './store/store';
 import './App.css';
 
 const queryClient = new QueryClient({
@@ -27,28 +28,21 @@ const ResetPasswordPage = React.lazy(() => import('./components/pages/ResetPassw
 const VerifyEmailPage = React.lazy(() => import('./components/pages/VerifyEmailPage'));
 const SettingsPage = React.lazy(() => import('./components/pages/SettingsPage'));
 
-// Simulated authentication state (replace with real auth logic)
-const useAuth = () => {
-    const [isAuthenticated, setIsAuthenticated] = React.useState(false);
-    return { isAuthenticated, setIsAuthenticated };
-};
-
 // PrivateRoute component
 const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
-    const { isAuthenticated } = useAuth();
+    const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
     return isAuthenticated ? <>{children}</> : <Navigate to='/login' />;
 };
 
 function App() {
 
-    const auth = useAuth();
+    const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
 
     return (
         <React.Fragment>
             <QueryClientProvider client={queryClient}>
-                {/* <ReactQueryDevtools initialIsOpen={false} /> */}
                 <Router>
-                    <PageHeader authenticated={auth.isAuthenticated} />
+                    <PageHeader />
                     <Box maxWidth='100%' minHeight='100vh' margin='40px'>
                         <React.Suspense fallback={<LoadingIndicator />}>
                             <Routes>
@@ -96,7 +90,7 @@ function App() {
                                 <Route
                                     path='/'
                                     element={
-                                        auth.isAuthenticated ? (
+                                        isAuthenticated ? (
                                             <Navigate to='/home' />
                                         ) : (
                                             <Navigate to='/login' />

@@ -10,18 +10,18 @@ import {
     VStack 
 } from '@chakra-ui/react';
 import { HiMenu } from 'react-icons/hi';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { RootState } from '../../../store/store';
 import { ColorModeButton } from '../../ui/color-mode';
 import Logo from './Logo';
 
-interface PageHeaderProps {
-    authenticated: boolean;
-}
-
-function PageHeader({ authenticated }: PageHeaderProps) {
+function PageHeader() {
 
     const [drawerOpen, setDrawerOpen] = React.useState(false);
+
+    const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
 
     const { t, i18n } = useTranslation();
     const navigate = useNavigate();
@@ -57,7 +57,7 @@ function PageHeader({ authenticated }: PageHeaderProps) {
                             <IconButton
                                 aria-label={t('menu.toggle')}
                                 variant='ghost'
-                                display={(authenticated && isMobile) ? 'block' : 'none'}
+                                display={(isAuthenticated && isMobile) ? 'block' : 'none'}
                                 size='lg'
                             >
                                 <HiMenu />
