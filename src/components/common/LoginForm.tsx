@@ -41,6 +41,7 @@ function LoginForm() {
         event.preventDefault();
         // Handle form submission logic here
         console.log('Form submitted');
+        console.log(API_BASE_URL)
         navigate('/home'); // Redirect to home page after login
     };
 
