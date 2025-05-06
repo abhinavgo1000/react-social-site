@@ -65,10 +65,19 @@
             "rememberMe": "Remember Me"
         },
         "register": {
+            "registerTitle": "Register",
+            "registerDescription": "Create a new account.",
             "username": "Username",
+            "firstName": "First Name",
             "email": "Email",
             "password": "Password",
             "confirmPassword": "Confirm Password",
+            "usernamePlaceholder": "Enter your username",
+            "firstNamePlaceholder": "Enter your first name",
+            "emailPlaceholder": "Enter your email",
+            "passwordPlaceholder": "Enter your password",
+            "confirmPasswordPlaceholder": "Confirm your password",
+            "terms": "I agree to the terms and conditions",
             "submit": "Register"
         },
         "settings": {

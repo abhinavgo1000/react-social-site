@@ -88,10 +88,10 @@ function LoginForm() {
                         <Checkbox.Label>{t('forms.login.rememberMe')}</Checkbox.Label>
                     </Checkbox.Root>
                     <Button type='submit' onClick={handleSubmit}>{t('forms.login.submit')}</Button>
-                        <Link href='/reset-password'>{t('forms.login.forgotPassword')}</Link>
-                        <Text>
-                            {t('forms.login.createAccount')} <Link href='/register'>{t('forms.login.register')}</Link>
-                        </Text>
+                    <Link href='/reset-password'>{t('forms.login.forgotPassword')}</Link>
+                    <Text>
+                        {t('forms.login.createAccount')} <Link href='/register'>{t('forms.login.register')}</Link>
+                    </Text>
                 </Fieldset.Root>
             </Box>
         </React.Fragment>
