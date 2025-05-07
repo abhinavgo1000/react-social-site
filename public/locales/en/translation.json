@@ -78,7 +78,9 @@
             "passwordPlaceholder": "Enter your password",
             "confirmPasswordPlaceholder": "Confirm your password",
             "terms": "I agree to the terms and conditions",
-            "submit": "Register"
+            "submit": "Register",
+            "login": "Already have an account?",
+            "loginLink": "Login"
         },
         "settings": {
             "language": "Language",

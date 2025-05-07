@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { 
-    Box, Button, Checkbox, Field, Fieldset, Input, Stack
+    Box, Button, Checkbox, Field, Fieldset, Input, Link, Stack, Text
 } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -62,7 +62,7 @@ function RegisterForm() {
 
     return (
         <React.Fragment>
-            <Box width='100%' alignItems='start' maxWidth='400px' mt='40px'>
+            <Box width='100%' alignItems='start' maxWidth='400px' mt='40px' minHeight='100vh'>
                 <Fieldset.Root size='lg' maxW='md'>
                     <Stack>
                         <Fieldset.Legend>{t('forms.register.registerTitle')}</Fieldset.Legend>
@@ -134,8 +134,10 @@ function RegisterForm() {
                     <Button type='submit' onClick={handleSubmit}>
                         {t('forms.register.submit')}
                     </Button>
+                    <Text>
+                        {t('forms.register.login')} <Link href='/login'>{t('forms.register.loginLink')}</Link>
+                    </Text>
                 </Fieldset.Root>
-
             </Box>
         </React.Fragment>
     );

@@ -43,7 +43,7 @@ function App() {
             <QueryClientProvider client={queryClient}>
                 <Router>
                     <PageHeader />
-                    <Box maxWidth='100%' minHeight='100vh' margin='40px'>
+                    <Box maxWidth='100%' minHeight='110vh' margin='40px'>
                         <React.Suspense fallback={<LoadingIndicator />}>
                             <Routes>
                                 {/* Public Routes */}
