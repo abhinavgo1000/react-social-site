@@ -86,6 +86,11 @@
             "language": "Idioma",
             "theme": "Tema",
             "notifications": "Notificaciones"
+        },
+        "datepicker": {
+            "date": "Fecha",
+            "datePlaceholder": "Selecciona una fecha",
+            "time": "Hora"
         }
     },
     "notifications": {
