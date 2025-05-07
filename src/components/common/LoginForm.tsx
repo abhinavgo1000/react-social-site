@@ -43,7 +43,7 @@ function LoginForm() {
         // Simulate form submission
         event.preventDefault();
         // Handle form submission logic here
-        dispatch(login({ email }));
+        dispatch(login({ email, password }));
         console.log(API_BASE_URL)
         navigate('/home'); // Redirect to home page after login
     };

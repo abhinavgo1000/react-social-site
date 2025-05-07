@@ -33,6 +33,10 @@
             "title": "Registrarse",
             "description": "Crea una nueva cuenta."
         },
+        "resetPassword": {
+            "title": "Restablecer contraseña",
+            "description": "Ingresa tu correo electrónico para restablecer tu contraseña."
+        },
         "notFound": {
             "title": "404 No Encontrado",
             "description": "La página que buscas no existe."
@@ -81,6 +85,20 @@
             "submit": "Registrarse",
             "login": "¿Ya tienes una cuenta?",
             "loginLink": "Iniciar sesión"
+        },
+        "resetPassword": {
+            "resetPasswordTitle": "Restablecer contraseña",
+            "resetPasswordDescription": "Ingresa tu correo electrónico para restablecer tu contraseña.",
+            "email": "Correo electrónico",
+            "emailPlaceholder": "Ingresa tu correo electrónico",
+            "password": "Nueva contraseña",
+            "passwordPlaceholder": "Ingresa tu nueva contraseña",
+            "confirmPassword": "Confirmar nueva contraseña",
+            "confirmPasswordPlaceholder": "Confirma tu nueva contraseña",
+            "terms": "Acepto los términos y condiciones",
+            "backToLogin": "¿Ya tienes una cuenta?",
+            "backToLoginLink": "Iniciar sesión",
+            "submit": "Restablecer contraseña"
         },
         "settings": {
             "language": "Idioma",

@@ -55,7 +55,7 @@ function RegisterForm() {
         setConfirmPasswordError(null); // Reset error state
         // Simulate form submission
         event.preventDefault();
-        dispatch(register({ email, userName }));
+        dispatch(register({ email, password }));
         console.log({ email, password, confirmPassword });
         navigate('/home'); // Redirect to home page after registration
     };

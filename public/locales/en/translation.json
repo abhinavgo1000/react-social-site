@@ -33,6 +33,10 @@
             "title": "Register",
             "description": "Create a new account."
         },
+        "resetPassword": {
+            "title": "Reset Password",
+            "description": "Enter your email to reset your password."
+        },
         "notFound": {
             "title": "404 Not Found",
             "description": "The page you are looking for does not exist."
@@ -81,6 +85,20 @@
             "submit": "Register",
             "login": "Already have an account?",
             "loginLink": "Login"
+        },
+        "resetPassword": {
+            "resetPasswordTitle": "Reset Password",
+            "resetPasswordDescription": "Enter your email to reset your password.",
+            "email": "Email",
+            "emailPlaceholder": "Enter your email",
+            "password": "New Password",
+            "passwordPlaceholder": "Enter your new password",
+            "confirmPassword": "Confirm New Password",
+            "confirmPasswordPlaceholder": "Confirm your new password",
+            "terms": "I agree to the terms and conditions",
+            "backToLogin": "Already have an account?",
+            "backToLoginLink": "Login",
+            "submit": "Reset Password"
         },
         "settings": {
             "language": "Language",
