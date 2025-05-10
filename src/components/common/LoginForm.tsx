@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { 
-    Box, Button, Checkbox, Field, Fieldset, Input, Link, Stack, Text 
+    Box, Button, Checkbox, Field, Fieldset, Input, Link, Stack, Text
 } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useMutation } from '@tanstack/react-query';
+import axios from 'axios';
 import { login } from '../../store/reducer/authSlice';
 
 const API_BASE_URL = import.meta.env.VITE_REACT_APP_API_BASE_URL;
@@ -25,6 +27,25 @@ function LoginForm() {
     const navigate = useNavigate();
     const { t } = useTranslation();
 
+    const { mutate: loginUser } = useMutation({
+        mutationFn: async () => {
+            const response = await axios.post(`${API_BASE_URL}/auth/login`, {
+                email,
+                password,
+            });
+            return response.data;
+        },
+        onSuccess: (data) => {
+            console.log('Login successful:', data);
+            // Handle successful login here
+            dispatch(login(data));
+        },
+        onError: (error) => {
+            console.error('Login failed:', error);
+            // Handle login error here
+        },
+    });
+
     const handleSubmit = (event: React.FormEvent) => {
         if (isSubmitting) return; // Prevent multiple submissions
 
@@ -40,11 +61,8 @@ function LoginForm() {
         setIsSubmitting(true);
         setEmailError(null); // Reset error state
         setPasswordError(null); // Reset error state
-        // Simulate form submission
         event.preventDefault();
-        // Handle form submission logic here
-        dispatch(login({ email, password }));
-        console.log(API_BASE_URL)
+        loginUser(); // Call the login mutation
         navigate('/home'); // Redirect to home page after login
     };
 

@@ -5,7 +5,11 @@ import {
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useMutation } from '@tanstack/react-query';
+import axios from 'axios';
 import { register } from '../../store/reducer/authSlice';
+
+const API_BASE_URL = import.meta.env.VITE_REACT_APP_API_BASE_URL;
 
 function RegisterForm() {
 
@@ -27,6 +31,28 @@ function RegisterForm() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { t } = useTranslation();
+
+    const { mutate: registerUser } = useMutation({
+        mutationFn: async () => {
+            const response = await axios.post(`${API_BASE_URL}/auth/register`, {
+                userName,
+                firstName,
+                email,
+                password,
+            });
+            return response.data;
+        },
+        onSuccess: (data) => {
+            console.log('Registration successful:', data);
+            // Handle successful registration here
+            dispatch(register(data));
+            navigate('/home'); // Redirect to home page after registration
+        },
+        onError: (error) => {
+            console.error('Registration failed:', error);
+            // Handle registration error here
+        },
+    });
 
     const handleSubmit = (event: React.FormEvent) => {
         if (isSubmitting) return; // Prevent multiple submissions
@@ -53,12 +79,18 @@ function RegisterForm() {
         setEmailError(null); // Reset error state
         setPasswordError(null); // Reset error state
         setConfirmPasswordError(null); // Reset error state
-        // Simulate form submission
         event.preventDefault();
-        dispatch(register({ email, password }));
-        console.log({ email, password, confirmPassword });
+        registerUser(); // Call the register mutation
         navigate('/home'); // Redirect to home page after registration
     };
+
+    React.useEffect(() => {
+        if (password !== confirmPassword) {
+            setConfirmPasswordError(t('errors.validation.password.match'));
+        } else {
+            setConfirmPasswordError(null);
+        }
+    }, [password, confirmPassword, t]);
 
     return (
         <React.Fragment>
