@@ -10,9 +10,9 @@ function LoginPage() {
     return (
         <React.Fragment>
             <Grid
-                h="200px"
-                templateRows="repeat(2, 1fr)"
-                templateColumns="repeat(5, 1fr)"
+                h='200px'
+                templateRows='repeat(2, 1fr)'
+                templateColumns='repeat(5, 1fr)'
                 gap={4}
             >
                 <GridItem rowSpan={1} colSpan={4}>
