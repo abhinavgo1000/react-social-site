@@ -7,7 +7,7 @@
         "logout": "Logout",
         "toggle": "toggle side navigation"
     },
-    "greeting": "Hi, User!",
+    "greeting": "Hi, {{name}}!",
     "pages": {
         "home": {
             "title": "Home",

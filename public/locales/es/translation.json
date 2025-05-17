@@ -7,7 +7,7 @@
         "logout": "Cerrar sesión",
         "toggle": "alternar navegación lateral"
     },
-    "greeting": "¡Hola, Usuario!",
+    "greeting": "¡Hola, {{name}}!",
     "pages": {
         "home": {
             "title": "Inicio",
