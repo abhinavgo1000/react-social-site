@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
+import CustomDatepicker from './CustomDatePicker';
 import { register } from '../../store/reducer/authSlice';
 
 const API_BASE_URL = import.meta.env.VITE_REACT_APP_API_BASE_URL;
@@ -94,7 +95,7 @@ function RegisterForm() {
 
     return (
         <React.Fragment>
-            <Box width='100%' alignItems='start' maxWidth='400px' mt='40px' minHeight='100vh'>
+            <Box width='100%' alignItems='start' maxWidth='1000px' mt='40px' minHeight='100vh'>
                 <Fieldset.Root size='lg' maxW='md'>
                     <Stack>
                         <Fieldset.Legend>{t('forms.register.registerTitle')}</Fieldset.Legend>
@@ -123,6 +124,10 @@ function RegisterForm() {
                             />
                             {firstNameError && <Field.ErrorText>{firstNameError}</Field.ErrorText>}
                         </Field.Root>
+                        <CustomDatepicker 
+                            dateLabel={t('forms.register.dateOfBirth')}
+                            datePlaceholder={t('forms.register.dateOfBirthPlaceholder')}
+                        />
                         <Field.Root required invalid={!!emailError}>
                             <Field.Label>{t('forms.register.email')}</Field.Label>
                             <Input
