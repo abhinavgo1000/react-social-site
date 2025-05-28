@@ -52,6 +52,14 @@ export const fetchUserData = async (token: string) => {
     }
 };
 
+export const useFetchUserData = (token: string) => {
+    return useQuery({
+        queryKey: ['userData', token],
+        queryFn: () => fetchUserData(token),
+        enabled: !!token,
+    });
+};
+
 export const fetchUserProfile = async (token: string) => {
     try {
         const response = await axios.get(`${API_BASE_URL}/user/profile`, {
