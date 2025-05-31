@@ -12,7 +12,7 @@ import {
 import { HiMenu } from 'react-icons/hi';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { RootState } from '../../../store/store';
 import { ColorModeButton } from '../../ui/color-mode';
 import Logo from './Logo';
@@ -24,17 +24,11 @@ function PageHeader() {
     const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
 
     const { t, i18n } = useTranslation();
-    const navigate = useNavigate();
     const isMobile = useBreakpointValue({ base: true, md: false });
 
 
     const handleMenuToggle = () => {
         setDrawerOpen(!drawerOpen);
-    };
-
-    const handleMenuItemClick = (path: string) => {
-        setDrawerOpen(false);
-        navigate(path);
     };
 
     const toggleLanguage = () => {
@@ -82,21 +76,32 @@ function PageHeader() {
                             <Drawer.Body>
                                 {/* Navigation Menu Items */}
                                 <VStack align='start' gap={4}>
-                                    <Button variant='ghost' onClick={() => handleMenuItemClick('/home')}>
-                                        {t('menu.home')}
-                                    </Button>
-                                    <Button variant='ghost' onClick={() => handleMenuItemClick('/profile')}>
-                                        {t('menu.profile')}
-                                    </Button>
-                                    <Button variant='ghost' onClick={() => handleMenuItemClick('/for-you')}>
-                                        {t('menu.forYou')}
-                                    </Button>
-                                    <Button variant='ghost' onClick={() => handleMenuItemClick('/settings')}>
-                                        {t('menu.settings')}
-                                    </Button>
-                                    <Button variant='ghost' onClick={() => handleMenuItemClick('/logout')}>
-                                        {t('menu.logout')}
-                                    </Button>
+                                    <Link to='/home'>
+                                        <Button variant='ghost'>
+                                            {t('menu.home')}
+                                        </Button>
+                                    </Link>
+
+                                    <Link to='/profile'>
+                                        <Button variant='ghost'>
+                                            {t('menu.profile')}
+                                        </Button>
+                                    </Link>
+                                    <Link to='/for-you'>
+                                        <Button variant='ghost'>
+                                            {t('menu.forYou')}
+                                        </Button>
+                                    </Link>
+                                    <Link to='/settings'>
+                                        <Button variant='ghost'>
+                                            {t('menu.settings')}
+                                        </Button>
+                                    </Link>
+                                    <Link to='/logout'>
+                                        <Button variant='ghost'>
+                                            {t('menu.logout')}
+                                        </Button>
+                                    </Link>
                                 </VStack>
                             </Drawer.Body>
                             <Drawer.Footer>
