@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { 
-    Box, Button, Checkbox, Field, Fieldset, Input, Link, Stack, Text
+    Box, Button, Checkbox, Field, Fieldset, Input, Stack, Text
 } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
@@ -106,9 +106,9 @@ function LoginForm() {
                         <Checkbox.Label>{t('forms.login.rememberMe')}</Checkbox.Label>
                     </Checkbox.Root>
                     <Button type='submit' onClick={handleSubmit}>{t('forms.login.submit')}</Button>
-                    <Link href='/reset-password'>{t('forms.login.forgotPassword')}</Link>
+                    <Link to='/reset-password'>{t('forms.login.forgotPassword')}</Link>
                     <Text>
-                        {t('forms.login.createAccount')} <Link href='/register'>{t('forms.login.register')}</Link>
+                        {t('forms.login.createAccount')} <Link to='/register'>{t('forms.login.register')}</Link>
                     </Text>
                 </Fieldset.Root>
             </Box>

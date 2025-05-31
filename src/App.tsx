@@ -88,6 +88,14 @@ const router = createBrowserRouter([
                 ),
             },
             {
+                path: '/',
+                element: (
+                    <PrivateRoute>
+                        <Navigate to='/home' />
+                    </PrivateRoute>
+                ),
+            },
+            {
                 path: '*',
                 element: <NotFoundPage />,
             },

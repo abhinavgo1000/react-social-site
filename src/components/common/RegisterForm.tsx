@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { 
-    Box, Button, Checkbox, Field, Fieldset, Input, Link, Stack, Text
+    Box, Button, Checkbox, Field, Fieldset, Input, Stack, Text
 } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
@@ -172,7 +172,7 @@ function RegisterForm() {
                         {t('forms.register.submit')}
                     </Button>
                     <Text>
-                        {t('forms.register.login')} <Link href='/login'>{t('forms.register.loginLink')}</Link>
+                        {t('forms.register.login')} <Link to='/login'>{t('forms.register.loginLink')}</Link>
                     </Text>
                 </Fieldset.Root>
             </Box>

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { 
-    Box, Button, Checkbox, Field, Fieldset, Input, Link, Stack, Text
+    Box, Button, Checkbox, Field, Fieldset, Input, Stack, Text
 } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { resetPassword } from '../../store/reducer/authSlice';
 
@@ -105,7 +105,7 @@ function ResetPasswordForm() {
                         {t('forms.resetPassword.submit')}
                     </Button>
                     <Text>
-                        {t('forms.resetPassword.backToLogin')} <Link href='/login'>{t('forms.resetPassword.backToLoginLink')}</Link>
+                        {t('forms.resetPassword.backToLogin')} <Link to='/login'>{t('forms.resetPassword.backToLoginLink')}</Link>
                     </Text>
                 </Fieldset.Root>
             </Box>
