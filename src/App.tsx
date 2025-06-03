@@ -4,10 +4,10 @@ import {
 } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useSelector } from 'react-redux';
+import Layout from './components/layout/Layout';
 import LoadingIndicator from './components/common/LoadingIndicator';
 import { RootState } from './store/store';
 import './App.css';
-import Layout from './components/layout/Layout';
 
 const queryClient = new QueryClient({
     defaultOptions: {
